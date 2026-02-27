@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: beacon-scorecard
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python scorecard.py
+    envVars:
+      - key: SCORECARD_PORT
+        value: 10000
+      - key: SCORECARD_CONFIG
+        value: agents.yaml
